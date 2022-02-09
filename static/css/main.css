@@ -1,0 +1,30 @@
+.nav-item {
+ margin: 3px;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+  margin-left: 1%;
+  margin-right: 1%;
+}
+
+footer {
+  flex: 0 0 auto;
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
+}
