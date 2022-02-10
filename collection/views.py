@@ -2,6 +2,8 @@ from django.shortcuts import render
 from django.http import HttpRequest, HttpResponse
 from typing import List
 from django.db.models import Count
+from django.utils.translation import gettext as _
+from django.utils.translation import get_language, activate, gettext
 from django.views.generic.base import View
 
 from .models import ItemCollection
@@ -27,7 +29,7 @@ def get_home_page_data(request: HttpRequest) -> HttpResponse:
         {
             "biggest_collections": biggest_collections,
             "newest_items": newest_items,
-            "title": "Home page"
+            "title": _("Home page"),
         }
     )
 

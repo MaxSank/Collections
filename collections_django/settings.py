@@ -128,6 +128,10 @@ LANGUAGES = (
     ('ru', _('Russian')),
 )
 
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
+
 DATETIME_FORMAT = 'Y-m-d H:M:S'
 
 TIME_ZONE = 'UTC'

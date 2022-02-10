@@ -1,10 +1,11 @@
 {% extends "main/layout.html" %}
+{% load i18n %}
 
 {% block body %}
 
 {% if newest_items %}
-    <h4>Recently added items:</h4>
-    <table class="table table-borderless" style="max-width: 300px">
+    <h4>{% translate 'Recently added items' %}:</h4>
+    <table class="table table-borderless" style="max-width: 350px">
     {% for single_item in newest_items %}
         <tr>
             <td style="padding: 4px"><a href="">{{ single_item.name }}</a></td>
@@ -13,22 +14,22 @@
     {% endfor %}
     </table>
 {% else %}
-    <div>No recently added items.</div>
+    <div>{% translate 'No recently added items.' %}</div>
 {% endif %}
 
 {{ count }}
 
 {% if biggest_collections %}
     <div style="max-width: 1000px">
-    <h4>Largest number of items in collections:</h4>
+    <h4>{% translate 'Largest number of items in collections' %}:</h4>
 
     {% for single_collection in biggest_collections %}
-        <div style="padding: 4px">{{ single_collection.get_items_count }} in <a href="">{{ single_collection.name }}</a> of user <a href="">{{ single_collection.user.username }}</a></div>
+        <div style="padding: 4px">{{ single_collection.get_items_count }} {% translate 'in' %} <a href="">{{ single_collection.name }}</a> {% translate 'of user' %} <a href="">{{ single_collection.user.username }}</a></div>
     {% endfor %}
 
     </div>
 {% else %}
-    <div>No items in collections.</div>
+    <div>{% translate 'No items in collections.' %}</div>
 {% endif %}
 
 {% endblock %}
