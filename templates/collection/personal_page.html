@@ -1,0 +1,65 @@
+{% extends "main/layout.html" %}
+{% load i18n %}
+
+{% block body %}
+<div>
+    <h3>{% translate 'Personal page of user' %} {{ owner_username }}</h3>
+</div>
+{% if user %}
+    {% if user.is_staff %}
+    <div>{% translate 'Good day, administrator!' %}</div>
+    {% elif owner_id == user.id %}
+    <div>{% translate 'Hello!' %}</div>
+    {% endif %}
+{% endif %}
+<div>
+    {% if user %}
+        {% if owner_id == user.id or user.is_staff %}
+    Create collection
+    {% comment %}
+            <a type="button" class="btn btn-outline-primary mt-1" href="{{ path('create_item_collection', {name: owner_username}) }}">{% translate 'Create collection' %}</a>
+    {% endcomment %}
+        {% endif %}
+    {% endif %}
+    <a type="button" class="btn btn-outline-primary mt-1" href="{% url 'home' %}">{% translate 'Back to main page' %}</a>
+</div>
+
+
+<hr>
+
+<div>
+{% if collections %}
+    {% for single_collection in collections %}
+
+            <div class="card border-dark mb-3">
+            <div class="card-header">
+                <h4 class="d-inline">
+                    <a href="">{{ single_collection.name }}</a>
+                </h4>
+                {% if user %}
+                {% if single_collection.user.id == user.id or user.is_staff %}
+                <a href="" class="d-inline p-1">{% translate 'Edit' %}</a>
+                <a href="" class="d-inline p-1" style="color: darkred">{% translate 'Delete' %}</a>
+                {% endif %}
+                {% endif %}
+
+                <div>{{ single_collection.user.name }}</div>
+                <div>{{ single_collection.theme }}</div>
+                <div>{{ single_collection.created|date:'Y-m-d H:i' }}</div>
+            </div>
+            <div class="card-body text-dark">
+
+                {{ single_collection.description }}
+
+            </div>
+            </div>
+
+    {% endfor %}
+
+{% else %}
+    {% translate 'No collections.' %}
+{% endif %}
+</div>
+
+
+{% endblock %}

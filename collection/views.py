@@ -8,6 +8,7 @@ from django.views.generic.base import View
 
 from .models import ItemCollection
 from .models import Item
+from user.models import CustomUser
 
 
 def get_five_newest_items() -> List[Item]:
@@ -30,6 +31,26 @@ def get_home_page_data(request: HttpRequest) -> HttpResponse:
             "biggest_collections": biggest_collections,
             "newest_items": newest_items,
             "title": _("Home page"),
+        }
+    )
+
+
+def get_personal_page_data(
+        request: HttpRequest,
+        username: str
+) -> HttpResponse:
+    owner_object = CustomUser.objects.get(username=username)
+    owner_id = owner_object.id
+    owner_username = owner_object.username
+    collections = owner_object.itemcollection_set.all()
+    return render(
+        request,
+        "collection/personal_page.html",
+        {
+            "owner_id": owner_id,
+            "owner_username": owner_username,
+            "collections": collections,
+            "title": _("Personal page"),
         }
     )
 

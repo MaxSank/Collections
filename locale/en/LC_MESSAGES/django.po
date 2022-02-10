@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 14:02+0300\n"
-"PO-Revision-Date: 2022-02-10 14:02+0300\n"
+"POT-Creation-Date: 2022-02-10 21:49+0300\n"
+"PO-Revision-Date: 2022-02-10 21:51+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -18,8 +18,12 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: .\collection\views.py:32
+#: .\collection\views.py:33
 msgid "Home page"
+msgstr ""
+
+#: .\collection\views.py:51 .\templates\main\layout.html:62
+msgid "Personal page"
 msgstr ""
 
 #: .\collections_django\settings.py:127
@@ -29,6 +33,34 @@ msgstr "English"
 #: .\collections_django\settings.py:128
 msgid "Russian"
 msgstr "Russian"
+
+#: .\templates\collection\personal_page.html:6
+msgid "Personal page of user"
+msgstr ""
+
+#: .\templates\collection\personal_page.html:10
+msgid "Good day, administrator!"
+msgstr ""
+
+#: .\templates\collection\personal_page.html:12
+msgid "Hello!"
+msgstr ""
+
+#: .\templates\collection\personal_page.html:25
+msgid "Back to main page"
+msgstr ""
+
+#: .\templates\collection\personal_page.html:42
+msgid "Edit"
+msgstr ""
+
+#: .\templates\collection\personal_page.html:43
+msgid "Delete"
+msgstr ""
+
+#: .\templates\collection\personal_page.html:61
+msgid "No collections."
+msgstr ""
 
 #: .\templates\main\home.html:7
 msgid "Recently added items"
@@ -60,10 +92,6 @@ msgstr ""
 
 #: .\templates\main\layout.html:58
 msgid "User"
-msgstr ""
-
-#: .\templates\main\layout.html:62
-msgid "Personal page"
 msgstr ""
 
 #: .\templates\main\layout.html:66

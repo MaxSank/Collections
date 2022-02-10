@@ -86,7 +86,7 @@
 
                 {% for single_language in languages %}
                   <li>
-                    <a class="dropdown-item" href="/{{ single_language.code }}/">
+                    <a class="dropdown-item" href="/{{ single_language.code }}/{{ request.get_full_path|slice:'4:' }}">
                       {{ single_language.name_local }}
                     </a>
                   </li>
