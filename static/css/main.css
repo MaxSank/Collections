@@ -28,3 +28,12 @@ footer {
   text-align: center;
   margin-top: 15px;
 }
+
+/* Width of registration and authorisation form */
+form[name*="registration_form"]{
+  max-width: 500px;
+}
+
+form[name*="authorisation_form"]{
+  max-width: 500px;
+}

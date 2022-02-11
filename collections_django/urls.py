@@ -20,16 +20,12 @@ from django.conf.urls.static import static
 from django.conf.urls.i18n import i18n_patterns
 
 
-"""urlpatterns = i18n_patterns(
-    path('admin/', admin.site.urls),
-
-    prefix_default_language=False
-)"""
-
 urlpatterns = [
     path('admin/', admin.site.urls),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 urlpatterns += i18n_patterns(
     path("", include('collection.urls')),
+    path("", include('django.contrib.auth.urls')),
+    path("", include('user.urls')),
 )

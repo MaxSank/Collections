@@ -5,15 +5,15 @@
 <div>
     <h3>{% translate 'Personal page of user' %} {{ owner_username }}</h3>
 </div>
-{% if user %}
-    {% if user.is_staff %}
-    <div>{% translate 'Good day, administrator!' %}</div>
-    {% elif owner_id == user.id %}
-    <div>{% translate 'Hello!' %}</div>
+    {% if user.is_authenticated %}
+        {% if user.is_staff %}
+        <div>{% translate 'Good day, administrator!' %}</div>
+        {% elif owner_id == user.id %}
+        <div>{% translate 'Hello!' %}</div>
+        {% endif %}
     {% endif %}
-{% endif %}
 <div>
-    {% if user %}
+    {% if user.is_authenticated %}
         {% if owner_id == user.id or user.is_staff %}
     Create collection
     {% comment %}
@@ -36,7 +36,7 @@
                 <h4 class="d-inline">
                     <a href="">{{ single_collection.name }}</a>
                 </h4>
-                {% if user %}
+                {% if user.is_authenticated %}
                 {% if single_collection.user.id == user.id or user.is_staff %}
                 <a href="" class="d-inline p-1">{% translate 'Edit' %}</a>
                 <a href="" class="d-inline p-1" style="color: darkred">{% translate 'Delete' %}</a>

@@ -1,0 +1,27 @@
+{% extends "main/layout.html" %}
+{% load i18n %}
+
+{% block body %}
+    <h3 class="mb-3">{% translate 'Registration Form' %}</h3>
+
+    {% if forms.errors %}
+        {% for error in forms.errors %}
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {{ error }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+
+    <form  method="post" name="registration_form">
+        {% csrf_token %}
+
+        {{ form.as_p }}
+         <button type="submit" class="btn btn-success mt-3">{% translate 'Create my account' %}</button>
+
+    </form>
+
+
+{% endblock %}
+action="{% url 'register_user' %}"
