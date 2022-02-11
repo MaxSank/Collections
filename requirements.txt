@@ -1,0 +1,13 @@
+asgiref==3.5.0
+beautifulsoup4==4.10.0
+Django==4.0.2
+django-bootstrap-v5==1.0.10
+django-environ==0.8.1
+flake8==4.0.1
+mccabe==0.6.1
+mysqlclient==2.1.0
+pycodestyle==2.8.0
+pyflakes==2.4.0
+soupsieve==2.3.1
+sqlparse==0.4.2
+tzdata==2021.5
