@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-10 21:49+0300\n"
-"PO-Revision-Date: 2022-02-10 21:51+0300\n"
+"POT-Creation-Date: 2022-02-15 12:29+0300\n"
+"PO-Revision-Date: 2022-02-15 12:32+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: ru\n"
@@ -24,7 +24,7 @@ msgstr ""
 msgid "Home page"
 msgstr "Домашняя страница"
 
-#: .\collection\views.py:51 .\templates\main\layout.html:62
+#: .\collection\views.py:53 .\templates\main\layout.html:62
 msgid "Personal page"
 msgstr "Персональная страница"
 
@@ -96,7 +96,7 @@ msgstr "Коллекции"
 msgid "User"
 msgstr "Пользователь"
 
-#: .\templates\main\layout.html:66
+#: .\templates\main\layout.html:66 .\templates\user\login.html:24
 msgid "Logout"
 msgstr "Выход"
 
@@ -111,3 +111,31 @@ msgstr "Регистрация"
 #: .\templates\main\layout.html:81
 msgid "Language"
 msgstr "Язык"
+
+#: .\templates\user\login.html:8 .\user\views.py:32
+msgid "Authorisation Form"
+msgstr "Форма авторизации"
+
+#: .\templates\user\login.html:24
+msgid "You are logged in as"
+msgstr "Вы вошли как"
+
+#: .\templates\user\login.html:29
+msgid "Enter name:"
+msgstr "Введите имя:"
+
+#: .\templates\user\login.html:33
+msgid "Enter password:"
+msgstr "Введите пароль:"
+
+#: .\templates\user\login.html:38
+msgid "Sign in to your account"
+msgstr "Войти в Ваш аккаунт"
+
+#: .\templates\user\register.html:5 .\user\views.py:62
+msgid "Registration Form"
+msgstr "Регистрационная форма"
+
+#: .\templates\user\register.html:21
+msgid "Create my account"
+msgstr "Создать мой аккаунт"

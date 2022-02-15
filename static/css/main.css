@@ -37,3 +37,12 @@ form[name*="registration_form"]{
 form[name*="authorisation_form"]{
   max-width: 500px;
 }
+
+/* Style for registration form */
+ul[class*="errorlist"] li {
+    color: red;
+}
+
+form[name*="registration_form"] p label {
+  margin-bottom: 8px;
+}
