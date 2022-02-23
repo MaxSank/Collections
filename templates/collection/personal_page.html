@@ -15,10 +15,7 @@
 <div>
     {% if user.is_authenticated %}
         {% if owner_id == user.id or user.is_staff %}
-    Create collection
-    {% comment %}
-            <a type="button" class="btn btn-outline-primary mt-1" href="{{ path('create_item_collection', {name: owner_username}) }}">{% translate 'Create collection' %}</a>
-    {% endcomment %}
+            <a type="button" class="btn btn-outline-primary mt-1" href="{% url 'create_collection' username=owner_username %}">{% translate 'Create collection' %}</a>
         {% endif %}
     {% endif %}
     <a type="button" class="btn btn-outline-primary mt-1" href="{% url 'home' %}">{% translate 'Back to main page' %}</a>
@@ -29,7 +26,7 @@
 
 <div>
 {% if collections %}
-    {% for single_collection in collections %}
+    {% for single_collection in collections|dictsortreversed:'created' %}
 
             <div class="card border-dark mb-3">
             <div class="card-header">

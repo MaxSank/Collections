@@ -9,4 +9,9 @@ urlpatterns = [
         views.get_personal_page_data,
         name='personal_page'
     ),
+    path(
+        'user-<str:username>/create-collection',
+        views.create_collection,
+        name='create_collection'
+    ),
 ]

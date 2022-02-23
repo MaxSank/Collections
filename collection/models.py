@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 import django.utils.timezone
+from django.utils.text import slugify
 
 
 class ItemCollection(models.Model):
@@ -28,6 +29,10 @@ class ItemCollection(models.Model):
     theme = models.CharField(
         "Theme", max_length=30, choices=CHOICES, default="Other"
     )
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(ItemCollection, self).save(*args, **kwargs)
 
     def __str__(self):
         return self.name
@@ -57,7 +62,3 @@ class Item(models.Model):
         db_table = "item"
         verbose_name = "Item"
         verbose_name_plural = "Items"
-
-
-
-

@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpRequest, HttpResponse
 from typing import List
 from django.db.models import Count
@@ -6,6 +6,7 @@ from django.utils.translation import gettext as _
 from django.utils.translation import get_language, activate, gettext
 from django.views.generic.base import View
 
+from .forms import ItemCollectionCreationForm
 from .models import ItemCollection
 from .models import Item
 from user.models import CustomUser
@@ -55,6 +56,34 @@ def get_personal_page_data(
     )
 
 
+def create_collection(
+        request: HttpRequest,
+        username: str
+) -> HttpResponse:
+    owner_object = CustomUser.objects.get(username=username)
+    owner_id = owner_object.id
+    owner_username = owner_object.username
+
+    if request.method == "POST":
+        form = ItemCollectionCreationForm(request.POST)
+        if form.is_valid():
+            item_collection_form = form.save(commit=False)
+            item_collection_form.user = owner_object
+            item_collection_form.save()
+            return redirect('personal_page', username=owner_username)
+    else:
+        form = ItemCollectionCreationForm()
+
+    return render(
+        request,
+        "collection/create_collection.html",
+        {
+            'form': form,
+            "owner_id": owner_id,
+            "owner_username": owner_username,
+            "title": _("Create collection"),
+        }
+    )
 
 
 

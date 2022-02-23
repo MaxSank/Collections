@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-15 12:29+0300\n"
+"POT-Creation-Date: 2022-02-23 09:11+0300\n"
 "PO-Revision-Date: 2022-02-15 12:29+0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -18,12 +18,16 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 3.0.1\n"
 
-#: .\collection\views.py:33
+#: .\collection\views.py:34
 msgid "Home page"
 msgstr ""
 
-#: .\collection\views.py:53 .\templates\main\layout.html:62
+#: .\collection\views.py:54 .\templates\main\layout.html:62
 msgid "Personal page"
+msgstr ""
+
+#: .\collection\views.py:84 .\templates\collection\personal_page.html:18
+msgid "Create collection"
 msgstr ""
 
 #: .\collections_django\settings.py:127
@@ -33,6 +37,10 @@ msgstr "English"
 #: .\collections_django\settings.py:128
 msgid "Russian"
 msgstr "Russian"
+
+#: .\templates\collection\create_collection.html:13
+msgid "Save collection"
+msgstr ""
 
 #: .\templates\collection\personal_page.html:6
 msgid "Personal page of user"
@@ -46,19 +54,19 @@ msgstr ""
 msgid "Hello!"
 msgstr ""
 
-#: .\templates\collection\personal_page.html:25
+#: .\templates\collection\personal_page.html:21
 msgid "Back to main page"
 msgstr ""
 
-#: .\templates\collection\personal_page.html:42
+#: .\templates\collection\personal_page.html:38
 msgid "Edit"
 msgstr ""
 
-#: .\templates\collection\personal_page.html:43
+#: .\templates\collection\personal_page.html:39
 msgid "Delete"
 msgstr ""
 
-#: .\templates\collection\personal_page.html:61
+#: .\templates\collection\personal_page.html:57
 msgid "No collections."
 msgstr ""
 
@@ -94,7 +102,7 @@ msgstr ""
 msgid "User"
 msgstr ""
 
-#: .\templates\main\layout.html:66 .\templates\user\login.html:24
+#: .\templates\main\layout.html:66 .\templates\user\login.html:23
 msgid "Logout"
 msgstr ""
 
@@ -110,30 +118,30 @@ msgstr ""
 msgid "Language"
 msgstr ""
 
-#: .\templates\user\login.html:8 .\user\views.py:32
+#: .\templates\user\login.html:7 .\user\views.py:39
 msgid "Authorisation Form"
 msgstr ""
 
-#: .\templates\user\login.html:24
+#: .\templates\user\login.html:23
 msgid "You are logged in as"
 msgstr ""
 
-#: .\templates\user\login.html:29
+#: .\templates\user\login.html:28
 msgid "Enter name:"
 msgstr ""
 
-#: .\templates\user\login.html:33
+#: .\templates\user\login.html:32
 msgid "Enter password:"
 msgstr ""
 
-#: .\templates\user\login.html:38
+#: .\templates\user\login.html:37
 msgid "Sign in to your account"
 msgstr ""
 
-#: .\templates\user\register.html:5 .\user\views.py:62
+#: .\templates\user\register.html:5 .\user\views.py:17 .\user\views.py:63
 msgid "Registration Form"
 msgstr ""
 
-#: .\templates\user\register.html:21
+#: .\templates\user\register.html:13
 msgid "Create my account"
 msgstr ""
