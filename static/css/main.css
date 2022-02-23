@@ -46,3 +46,7 @@ ul[class*="errorlist"] li {
 form[name*="registration_form"] p label {
   margin-bottom: 8px;
 }
+
+#collection_forms {
+  max-width: 500px;
+}

@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 import django.utils.timezone
 from django.utils.text import slugify
+from .utils import generate_unique_slug
 
 
 class ItemCollection(models.Model):
@@ -31,7 +32,13 @@ class ItemCollection(models.Model):
     )
 
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name)
+        if self.slug:
+            """edit"""
+            if slugify(self.name) != self.slug:
+                self.slug = generate_unique_slug(ItemCollection, self.name)
+        else:
+            """create"""
+            self.slug = generate_unique_slug(ItemCollection, self.name)
         super(ItemCollection, self).save(*args, **kwargs)
 
     def __str__(self):

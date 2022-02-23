@@ -4,7 +4,7 @@ from typing import List
 from django.db.models import Count
 from django.utils.translation import gettext as _
 from django.utils.translation import get_language, activate, gettext
-from django.views.generic.base import View
+from django.views.generic import UpdateView
 
 from .forms import ItemCollectionCreationForm
 from .models import ItemCollection
@@ -82,8 +82,47 @@ def create_collection(
             "owner_id": owner_id,
             "owner_username": owner_username,
             "title": _("Create collection"),
+            "button_text": _("Create collection"),
         }
     )
 
 
+def edit_collection(
+        request: HttpRequest,
+        slug: str,
+) -> HttpResponse:
+    item_collection = ItemCollection.objects.get(slug=slug)
+    form = ItemCollectionCreationForm(
+        request.POST or None,
+        instance=item_collection
+    )
 
+    if form.is_valid():
+        form.save()
+        return redirect(
+            'personal_page',
+            username=item_collection.user.username
+        )
+
+    return render(
+        request,
+        "collection/create_collection.html",
+        {
+            'item_collection': item_collection,
+            'form': form,
+            "title": _("Edit collection"),
+            "button_text": _("Edit collection"),
+        }
+    )
+
+
+def delete_collection(
+        request: HttpRequest,
+        slug: str,
+) -> HttpResponse:
+    item_collection = ItemCollection.objects.get(slug=slug)
+    item_collection.delete()
+    return redirect(
+        'personal_page',
+        username=item_collection.user.username
+    )

@@ -14,4 +14,14 @@ urlpatterns = [
         views.create_collection,
         name='create_collection'
     ),
+    path(
+        'collection-<slug:slug>/edit-collection',
+        views.edit_collection,
+        name='edit_collection'
+    ),
+    path(
+        'collection-<slug:slug>/delete-collection',
+        views.delete_collection,
+        name='delete_collection'
+    )
 ]

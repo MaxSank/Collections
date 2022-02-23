@@ -5,12 +5,12 @@
     <h3 class="mb-3">{% translate title %}</h3>
 
 
-    <form  method="post">
+    <form  method="post" id="collection_forms">
         {% csrf_token %}
 
         {{ form.as_p }}
 
-         <button type="submit" class="btn btn-success mt-3">{% translate 'Save collection' %}</button>
+         <button type="submit" class="btn btn-success mt-3">{% translate button_text %}</button>
 
     </form>
 

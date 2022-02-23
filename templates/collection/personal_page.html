@@ -35,8 +35,8 @@
                 </h4>
                 {% if user.is_authenticated %}
                 {% if single_collection.user.id == user.id or user.is_staff %}
-                <a href="" class="d-inline p-1">{% translate 'Edit' %}</a>
-                <a href="" class="d-inline p-1" style="color: darkred">{% translate 'Delete' %}</a>
+                <a href="{% url 'edit_collection' slug=single_collection.slug %}" class="d-inline p-1">{% translate 'Edit' %}</a>
+                <a href="{% url 'delete_collection' slug=single_collection.slug %}" class="d-inline p-1" style="color: darkred">{% translate 'Delete' %}</a>
                 {% endif %}
                 {% endif %}
 
