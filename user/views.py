@@ -46,6 +46,7 @@ def logout_user(request: HttpRequest) -> HttpResponse:
     return redirect('home')
 
 
+"""
 def register_user(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = UserCreationForm(request.POST)
@@ -63,3 +64,4 @@ def register_user(request: HttpRequest) -> HttpResponse:
             "title": _("Registration Form"),
         }
     )
+"""

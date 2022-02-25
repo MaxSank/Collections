@@ -31,7 +31,7 @@
             <div class="card border-dark mb-3">
             <div class="card-header">
                 <h4 class="d-inline">
-                    <a href="">{{ single_collection.name }}</a>
+                    <a href="{% url 'show_collection' slug=single_collection.slug %}">{{ single_collection.name }}</a>
                 </h4>
                 {% if user.is_authenticated %}
                 {% if single_collection.user.id == user.id or user.is_staff %}

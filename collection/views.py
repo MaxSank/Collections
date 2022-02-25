@@ -56,6 +56,21 @@ def get_personal_page_data(
     )
 
 
+def show_collection(
+        request: HttpRequest,
+        slug: str,
+) -> HttpResponse:
+    item_collection = ItemCollection.objects.get(slug=slug)
+    return render(
+        request,
+        "collection/collection.html",
+        {
+            "collection": item_collection,
+            "title": _("Collection"),
+        }
+    )
+
+
 def create_collection(
         request: HttpRequest,
         username: str

@@ -1,0 +1,21 @@
+{% extends "main/layout.html" %}
+{% load i18n %}
+
+{% block meta %}
+    <meta name="viewport"
+       content="width=1140, initial-scale=1, user-scalable=yes">
+{% endblock meta %}
+
+{% block body %}
+    <div style="display: block">
+        <h3 class="d-inline p-1">{% translate 'Collection' %} {{ collection.name }} {% translate 'of user' %}
+            <a href="{% url 'personal_page' username=collection.user.username %}">{{ collection.user.username }}</a></h3>
+        {% if user %}
+            {% if collection.user.id == user.id or user.is_staff %}
+                Create, Edit
+            {% endif %}
+        {% endif %}
+    </div>
+
+
+{% endblock %}

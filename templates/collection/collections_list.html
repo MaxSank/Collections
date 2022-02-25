@@ -1,8 +1,0 @@
-{% extends "main/layout.html" %}
-
-{% block body %}
-    {% for single_collection in collections_list %}
-        {{ single_collection.name }}
-        {{ single_collection.user.username }}
-    {% endfor %}
-{% endblock %}

@@ -23,5 +23,10 @@ urlpatterns = [
         'collection-<slug:slug>/delete-collection',
         views.delete_collection,
         name='delete_collection'
-    )
+    ),
+    path(
+        'collection-<slug:slug>/',
+        views.show_collection,
+        name='show_collection'
+    ),
 ]
